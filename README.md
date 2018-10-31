@@ -81,6 +81,27 @@ Honestly, never! But when your pressed by time and costs a good plugin can save 
 ## 2.4 Q: What are some (personal) principles you follow when working with JS DOM event listeners to avoid bad page performance, ‘memory leaks’ etc.? 
 Make the listeners 'passive', remove the listeners once they are not needed, assign the event listener on id's and make use of event delagation and dynamic dispatch. 
 
+## 3.1 How would you submit the form via AJAX using jQuery? (just JS code example, no need mock any submit endpoint)
+
+       function sendAjaxForm(form, options) {
+           $.ajax({
+                method: options.method,
+                url: options.url,
+                data: form.serialize()
+            })
+            .done(function(response) {
+                console.log('Data Saved: ' + response);
+            })
+            .fail(function(response){
+               console.log('Error: ' + response);
+            });
+         };
+         
+         $('[data-ajax-submit]').on('click', function(e){
+              e.preventDefault();
+              sendAjaxForm($(this).closest('form'), {method: 'POST', url: 'some-endpoint-url'});
+              return false;
+         });
 
 ## 3.2 Q: When does it make sense to submit a form as a non-AJAX (regular) request?
 Usually when following submission we need to reload the page or we intend to have the user end up at a different page.
