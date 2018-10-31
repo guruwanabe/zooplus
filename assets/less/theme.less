@@ -1,0 +1,49 @@
+@import "bootstrap/bootstrap.less";
+@import "theme-variables";
+
+//
+// General elements
+// --------------------------------------------------
+body {
+  padding-top: 50px;
+  background-color: @white;
+}
+
+footer {
+  p {
+    border-top: 1px solid @gray-lighter;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 0
+  }
+}
+
+.page-title {
+  &:extend(.h3);
+  border-bottom: 1px solid @gray-lighter;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+
+//
+// Forms
+// --------------------------------------------------
+#errorMessage {
+  display: none;
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: inside;
+    list-style-type: decimal;
+  }
+}
+.form {
+  .form-control {
+    height: @input-height-base;
+    border-radius: @border-radius-base;
+  }
+  label {
+    font-weight: normal;
+  }
+}

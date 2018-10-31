@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zooplus form</title>
+
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/vendor/datepicker/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="assets/vendor/colorbox/css/colorbox.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle collapsed"
+                  data-toggle="collapse"
+                  data-target="#navbar"
+                  aria-expanded="false"
+                  aria-controls="navbar"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Kickstart web</a>
+        </div><!--/.navbar-header -->
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container -->
+    </nav><!--/.navbar -->
+
+    <div class="container">
+        <h1 class="page-title">
+          Person form
+        </h1>
+        <div id="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <ol></ol>
+        </div><!--/.alert -->
+
+        <div class="form">
+          <form id="personForm" method="post" action="" novalidate>
+              <div class="row">
+
+                <div class="col-sm-2 col-md-2">
+                  <div class="form-group">
+                    <label for="personTitle">Title</label>
+                    <select id="personTitle" class="form-control" name="personTitle">
+                      <option disabled selected value hidden>Mr.</option>
+                      <option value="1">Mr.</option>
+                      <option value="2">Ms.</option>
+                      <option value="2">Mrs.</option>
+                    </select>
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-2 -->
+
+                <div class="col-sm-5 col-md-5">
+                  <div class="form-group">
+                    <label for="personFirstName">First name</label>
+                    <input id="personFirstName" class="form-control" type="text" name="personFirstName" required/>
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-5 -->
+
+                <div class="col-sm-5 col-md-5">
+                  <div class="form-group">
+                    <label for="personLastName">Last name</label>
+                    <input class="form-control" type="text" name="personLastName" required/>
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-5 -->
+
+              </div> <!--/.row -->
+
+              <div class="row">
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <label for="personGender">Gender</label>
+                    <select class="form-control" name="personGender" required>
+                      <option disabled selected value hidden> -- select an option -- </option>
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                    </select>
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-6 -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <label for="personBirthDate">Date of birth</label>
+                    <input id="datepicker"
+                           class="form-control"
+                           type="text"
+                           name="personBirthDate"
+                           placeholder="dd/mm/yyyy"
+                           autocomplete="off"
+                     />
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-6 -->
+
+              </div><!--/.row -->
+
+              <div class="row">
+
+                <div class="col-sm-12 col-md-12">
+                  <div class="form-group">
+                    <label for="personAddress">Address</label>
+                    <input class="form-control" placeholder="Street" type="text" name="personAddress"/>
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-12 -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" placeholder="City" type="text" name="personCity"/>
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-6 -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" placeholder="State" type="text" name="personState"/>
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-6 -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" placeholder="Postcode" type="text" name="personZipcode"/>
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-6 -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" name="personCountry">
+                      <option disabled selected value hidden> -- select an option -- </option>
+                      <option value="1">Romania</option>
+                      <option value="2">Germany</option>
+                    </select>
+                  </div><!--/.form-group -->
+                </div><!--/.col-md-6 -->
+
+              </div><!--/.row -->
+
+              <div class="row">
+                <div class="col-md-12 text-right">
+                  <button type="submit" class="btn btn-primary" data-loading-text="Loading...">
+                    Send
+                  </button>
+                </div>
+              </div>
+
+          </form><!--/#personForm -->
+        </div><!--/.form -->
+
+    </div><!--/.container -->
+
+    <footer class="footer">
+        <div class="container">
+          <p>© Kickstart Web 2012</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script src="assets/vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/vendor/validate/jquery.validate.min.js"></script>
+    <script src="assets/vendor/colorbox/jquery.colorbox-min.js"></script>
+    <script src="assets/js/page.js"></script>
+    <script src="assets/js/form.js"></script>
+
+    <!-- Using inline script to bypass render blocking -->
+    <script type="text/javascript">
+        const page = new Page();
+        page.updateSettings({
+          form: new Form({
+            selector: '#personForm',
+            errorContainer: $('#errorMessage'),
+            errorClass: 'has-error',
+            successClass: 'has-success',
+            feedbackElement: '.form-group',
+            rules: {
+              personFirstName: {
+                required: true,
+                minlength: 2
+              },
+              personLastName:  {
+                required: true,
+                minlength: 2
+              },
+              personGender: 'required',
+            },
+            messages: {
+                personFirstName: 'Please enter your firstname',
+                personLastName: 'Please enter your lastname',
+                personGender: 'Please enter your gender',
+            }
+          })
+        });
+        //page.settings.form.validateForm(form);
+        console.log(page);
+    </script>
+  </body>
+</html>

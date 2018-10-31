@@ -1,0 +1,11 @@
+{
+  "name": "Zooplus",
+  "version": "1.0.0",
+  "description": "Zooplus test",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^2.0.0"
+  }
+}
