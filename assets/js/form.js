@@ -4,14 +4,15 @@
  * @return {this}
  */
  var Form = function (options) {
-     var defaults = {};
-
+     var defaults = {
+       errorClass: 'has-error',
+       successClass: 'has-success',
+       feedbackElement: '.form-group',
+     };
      this.settings = $.extend(true, {}, defaults, options);
-     this.form = $(this.settings.selector);
 
-     this.validateForm(this.form);
+     this.validateForm(this.settings.selector);
  };
-
 
 Form.prototype = {
   /**
@@ -20,7 +21,7 @@ Form.prototype = {
    */
   validateForm: function(form){
     const t = this;
-    
+
     form.validate({
       rules: t.settings.rules,
       messages: t.settings.messages,

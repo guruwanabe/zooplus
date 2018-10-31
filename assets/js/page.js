@@ -24,10 +24,16 @@ Page.prototype = {
   init: function(){
     //cache the datepicker selector
     const datepicker = $('#datepicker');
-    //init the datepicker
-    datepicker.datepicker({
-      format: datepicker.attr('placeholder')
-    });
+    //init the datepicker if selector exists
+    if(datepicker.length){
+      datepicker.datepicker({
+        format: datepicker.attr('placeholder'),
+        endDate: datepicker.data('end-date'),
+        autoclose: true,
+        todayHighlight: true,
+        orientation: datepicker.data('orientation')
+      });
+    }
   },
   /**
    * Update the settings object

@@ -72,14 +72,14 @@
                 <div class="col-sm-5 col-md-5">
                   <div class="form-group">
                     <label for="personFirstName">First name</label>
-                    <input id="personFirstName" class="form-control" type="text" name="personFirstName" required/>
+                    <input id="personFirstName" class="form-control" type="text" name="personFirstName" autocomplete="off" required/>
                   </div><!--/.form-group -->
                 </div><!--/.col-md-5 -->
 
                 <div class="col-sm-5 col-md-5">
                   <div class="form-group">
                     <label for="personLastName">Last name</label>
-                    <input class="form-control" type="text" name="personLastName" required/>
+                    <input class="form-control" type="text" name="personLastName" autocomplete="off" required/>
                   </div><!--/.form-group -->
                 </div><!--/.col-md-5 -->
 
@@ -90,7 +90,7 @@
                 <div class="col-sm-6 col-md-6">
                   <div class="form-group">
                     <label for="personGender">Gender</label>
-                    <select class="form-control" name="personGender" required>
+                    <select class="form-control" name="personGender" autocomplete="off" required>
                       <option disabled selected value hidden> -- select an option -- </option>
                       <option value="1">Male</option>
                       <option value="2">Female</option>
@@ -107,6 +107,8 @@
                            name="personBirthDate"
                            placeholder="dd/mm/yyyy"
                            autocomplete="off"
+                           data-end-date="0d"
+                           data-orientation="bottom auto"
                      />
                   </div><!--/.form-group -->
                 </div><!--/.col-md-6 -->
@@ -185,16 +187,16 @@
     <script src="assets/js/page.js"></script>
     <script src="assets/js/form.js"></script>
 
-    <!-- Using inline script to bypass render blocking -->
     <script type="text/javascript">
+      (function($){
         const page = new Page();
+        const formSelector = $('#personForm');
+        const errorContainer = $('#errorMessage');
+
         page.updateSettings({
           form: new Form({
-            selector: '#personForm',
-            errorContainer: $('#errorMessage'),
-            errorClass: 'has-error',
-            successClass: 'has-success',
-            feedbackElement: '.form-group',
+            selector:formSelector,
+            errorContainer: errorContainer,
             rules: {
               personFirstName: {
                 required: true,
@@ -207,14 +209,21 @@
               personGender: 'required',
             },
             messages: {
-                personFirstName: 'Please enter your firstname',
-                personLastName: 'Please enter your lastname',
+                personFirstName: {
+                  required:'Please enter your firstname',
+                  minlength: $.validator.format("Enter at least {0} characters")
+                },
+                personLastName: {
+                  required:'Please enter your lastname',
+                  minlength: $.validator.format("Enter at least {0} characters")
+                },
                 personGender: 'Please enter your gender',
             }
           })
         });
-        //page.settings.form.validateForm(form);
         console.log(page);
+      })(jQuery);
+
     </script>
   </body>
 </html>
