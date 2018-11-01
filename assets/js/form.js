@@ -49,15 +49,15 @@ Form.prototype = {
         }
       },
       highlight: function(element, errorClass, validClass) {
-				$(element).parents(t.settings.feedbackElement)
-									.addClass(t.settings.errorClass)
-									.removeClass(t.settings.successClass);
-			},
-			unhighlight: function(element, errorClass, validClass) {
-				$(element).parents(t.settings.feedbackElement)
-									.addClass(t.settings.successClass)
-									.removeClass(t.settings.errorClass);
-			}
+	$(element).parents(t.settings.feedbackElement)
+		  .addClass(t.settings.errorClass)
+		  .removeClass(t.settings.successClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+	$(element).parents(t.settings.feedbackElement)
+		  .addClass(t.settings.successClass)
+		  .removeClass(t.settings.errorClass);
+      }
     });
   }
 }
