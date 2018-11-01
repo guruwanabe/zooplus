@@ -32,15 +32,20 @@ Form.prototype = {
 			wrapper: 'li',
       invalidHandler: function(event, validator) {
         const errors = validator.numberOfInvalids();
-        const alert = '<div class="alert alert-danger alert-dismissible" role="alert"></div>';
+        const alert = $('<div class="alert alert-danger alert-dismissible" role="alert"><ol></ol></div>');
 
         if (errors) {
-          const message = errors == 1
-            ? 'You missed 1 field. It has been highlighted'
-            : 'You missed ' + errors + ' fields. They have been highlighted';
-            $.colorbox({
-              html: $(alert).append(message)
-            });
+          let message = '';
+          const invalidElements = validator.errorList;
+          Object.keys(invalidElements).forEach(function (element) {
+            return message += '<li>' + invalidElements[element]['message'] + '</li>';
+          });
+
+          $(alert).find('ol').append(message)
+
+          $.colorbox({
+            html: alert
+          });
         }
       },
 			highlight: function(element, errorClass, validClass) {

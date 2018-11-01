@@ -48,12 +48,14 @@
         <h1 class="page-title">
           Person form
         </h1>
-        <div id="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <ol></ol>
-        </div><!--/.alert -->
 
         <div class="form">
+          
+          <div id="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <ol></ol>
+          </div><!--/.alert -->
+
           <form id="personForm" method="post" action="" novalidate>
               <div class="row">
 
@@ -155,12 +157,14 @@
               </div><!--/.row -->
 
               <div class="row">
+
                 <div class="col-md-12 text-right">
                   <button type="submit" class="btn btn-primary" data-loading-text="Loading...">
                     Send
                   </button>
-                </div>
-              </div>
+                </div><!--/.col-md-12 -->
+
+              </div><!--/.row -->
 
           </form><!--/#personForm -->
         </div><!--/.form -->
@@ -170,7 +174,7 @@
     <footer class="footer">
         <div class="container">
           <p>© Kickstart Web 2012</p>
-        </div>
+        </div><!--/.container -->
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -211,19 +215,17 @@
             messages: {
                 personFirstName: {
                   required:'Please enter your firstname',
-                  minlength: $.validator.format("Enter at least {0} characters")
+                  //minlength: $.validator.format("Enter at least {0} characters")
                 },
                 personLastName: {
                   required:'Please enter your lastname',
-                  minlength: $.validator.format("Enter at least {0} characters")
+                  //minlength: $.validator.format("Enter at least {0} characters")
                 },
                 personGender: 'Please enter your gender',
             }
           })
         });
-        console.log(page);
       })(jQuery);
-
     </script>
   </body>
 </html>

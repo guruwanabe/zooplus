@@ -6,44 +6,49 @@
 // --------------------------------------------------
 body {
   padding-top: 50px;
-  background-color: @white;
 }
 
 footer {
   p {
     border-top: 1px solid @gray-lighter;
-    padding-top: 20px;
-    margin-top: 20px;
-    margin-bottom: 0
+    padding-top: @line-height-computed;
+    margin-top: @line-height-computed;
+    margin-bottom: 0;
   }
 }
 
 .page-title {
   &:extend(.h3);
   border-bottom: 1px solid @gray-lighter;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  padding-bottom: @line-height-computed;
+  margin-bottom: @line-height-computed;
 }
 
 
 //
 // Forms
 // --------------------------------------------------
-#errorMessage {
-  display: none;
-  ol {
-    padding: 0;
-    margin: 0;
-    list-style: inside;
-    list-style-type: decimal;
-  }
-}
 .form {
+  .alert {
+    display: none;
+  }
   .form-control {
     height: @input-height-base;
     border-radius: @border-radius-base;
   }
   label {
     font-weight: normal;
+  }
+}
+
+//
+// Alerts
+// --------------------------------------------------
+.alert {
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: inside;
+    list-style-type: decimal;
   }
 }

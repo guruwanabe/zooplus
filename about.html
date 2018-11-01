@@ -47,7 +47,7 @@
         <h1 class="page-title">
           About page
         </h1>
-        <p>This page is only to demonstrate how Theme.updateSettings() method actually works</p>
+        <p>This page is only to demonstrate how Page.updateSettings() method actually works</p>
         <p>The settings object can be configured/extended for each page/component, we can also override default configuration</p>
         <code id="console"></code>
 
@@ -56,7 +56,7 @@
     <footer class="footer">
         <div class="container">
           <p>© Kickstart Web 2012</p>
-        </div>
+        </div><!--/.container -->
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -70,14 +70,16 @@
 
     <script src="assets/js/page.js"></script>
     <script type="text/javascript">
-        //init the Page with default config
-        const page = new Page();
-        //Update the config. This can olso be done in an Ajax success callback
-        page.updateSettings({
-            //here we can pass a configuration object, this can come from API/backend or some frontend config file
-            pageName: 'About'
-        });
-        $('#console').html(JSON.stringify(page));
+        (function($){
+          //init the Page with default config
+          const page = new Page();
+          //Update the config. This can olso be done in an Ajax success callback
+          page.updateSettings({
+              //here we can pass a configuration object, this can come from API/backend or some frontend config file
+              pageName: 'About'
+          });
+          $('#console').html(JSON.stringify(page));
+        })(jQuery)
     </script>
   </body>
 </html>

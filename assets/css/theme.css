@@ -6818,7 +6818,6 @@ button.close {
 }
 body {
   padding-top: 50px;
-  background-color: #ffffff;
 }
 footer p {
   border-top: 1px solid #e5e5e5;
@@ -6831,14 +6830,8 @@ footer p {
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
-#errorMessage {
+.form .alert {
   display: none;
-}
-#errorMessage ol {
-  padding: 0;
-  margin: 0;
-  list-style: inside;
-  list-style-type: decimal;
 }
 .form .form-control {
   height: 30px;
@@ -6846,4 +6839,10 @@ footer p {
 }
 .form label {
   font-weight: normal;
+}
+.alert ol {
+  padding: 0;
+  margin: 0;
+  list-style: inside;
+  list-style-type: decimal;
 }
