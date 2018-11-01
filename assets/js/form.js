@@ -48,15 +48,15 @@ Form.prototype = {
           });
         }
       },
-			highlight: function(element, errorClass, validClass) {
+      highlight: function(element, errorClass, validClass) {
 				$(element).parents(t.settings.feedbackElement)
-                  .addClass(t.settings.errorClass)
-                  .removeClass(t.settings.successClass);
+									.addClass(t.settings.errorClass)
+									.removeClass(t.settings.successClass);
 			},
 			unhighlight: function(element, errorClass, validClass) {
 				$(element).parents(t.settings.feedbackElement)
-                  .addClass(t.settings.successClass)
-                  .removeClass(t.settings.errorClass);
+									.addClass(t.settings.successClass)
+									.removeClass(t.settings.errorClass);
 			}
     });
   }
