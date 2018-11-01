@@ -28,8 +28,8 @@ Form.prototype = {
       errorElement: 'span',
       errorClass: t.settings.errorClass,
       errorContainer: t.settings.errorContainer,
-			errorLabelContainer: t.settings.errorContainer.find('ol'),
-			wrapper: 'li',
+      errorLabelContainer: t.settings.errorContainer.find('ol'),
+      wrapper: 'li',
       invalidHandler: function(event, validator) {
         const errors = validator.numberOfInvalids();
         const alert = $('<div class="alert alert-danger alert-dismissible" role="alert"><ol></ol></div>');
