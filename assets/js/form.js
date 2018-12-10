@@ -12,7 +12,7 @@
      this.form = $(form); //jQuery object 
      this.settings = $.extend(true, {}, defaults, options);
 
-     this.validateForm(this.settings.selector);
+     this.validateForm(this.form);
  };
 
 Form.prototype = {
