@@ -195,11 +195,10 @@
     <script type="text/javascript">
       (function($){
         const page = new Page();
-        const formSelector = $('#personForm');
         const errorContainer = $('#errorMessage');
 
         page.updateSettings({
-          form: new Form({
+          form: new Form('#personForm', {
             selector:formSelector,
             errorContainer: errorContainer,
             rules: {
