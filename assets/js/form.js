@@ -1,5 +1,6 @@
 /**
  * Public class definition
+ * @param  {string} form //jquery selector
  * @param  {object} options
  * @return {this}
  */
