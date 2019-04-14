@@ -71,14 +71,14 @@
     <script src="assets/js/page.js"></script>
     <script type="text/javascript">
         (function($){
-          //init the Page with default config
-          const page = new Page();
+          //init the View with default config
+          const view = new CoreView();
           //Update the config. This can olso be done in an Ajax success callback
-          page.updateSettings({
+          view.updateSettings({
               //here we can pass a configuration object, this can come from API/backend or some frontend config file
               pageName: 'About'
           });
-          $('#console').html(JSON.stringify(page));
+          $('#console').html(JSON.stringify(view));
         })(jQuery)
     </script>
   </body>
