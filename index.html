@@ -193,10 +193,10 @@
 
     <script type="text/javascript">
       (function($){
-        const page = new Page();
+        const view = new CoreView();
         const errorContainer = $('#errorMessage');
 
-        page.updateSettings({
+        view.updateSettings({
           form: new Form('#personForm', {
             errorContainer: errorContainer,
             rules: {
