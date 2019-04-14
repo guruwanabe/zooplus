@@ -3,7 +3,7 @@
  * @param  {object} options
  * @return {this}
  */
-var Page = function (options) {
+var CoreView = function (options) {
     var defaults  = {
       pageName: 'Home'
     };
@@ -14,7 +14,7 @@ var Page = function (options) {
 };
 
 
-Page.prototype = {
+CoreView.prototype = {
   /**
    * Init the page
    * Init everything needed at load
